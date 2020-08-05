@@ -22,26 +22,31 @@
 <div class="divider"></div>
 <div class="container">
     <h2 class="padded-left">Другие статьи</h2>
-    <div class="row">
+    <div class="row grid">
         {% elif forloop.last %}
-        <a href="{% url 'post_detail' post.pk %}">
-            <div class="col m12 l4 grid-item">
-                <p class="date">28 июня 2019 18:34</p>
-                <img class="hero-image" src="{% static 'images/1Statya_2.svg' %}">
-                <h3>{{ post.title }}</h3>
-            </div>
+
+        <div class="col m12 l4 padded">
+            <a href="{% url 'post_detail' post.pk %}">
+                <div class="grid-item bordered">
+                    <p class="date">28 июня 2019 18:34</p>
+                    <img src="{% static 'images/1Statya_2.svg' %}">
+                    <h3>{{ post.title }}</h3>
+                </div>
+        </div>
         </a>
     </div>
 </div>
 {% else %}
-<a href="{% url 'post_detail' post.pk %}">
-    <div class="col m12 l4 grid-item">
-        <p class="date">28 июня 2019 18:34</p>
-        <img class="hero-image" src="{% static 'images/1Statya_2.svg' %}">
-        <h3>{{ post.title }}</h3>
-    </div>
-</a>
 
+<div class="col m12 l4 padded">
+    <a href="{% url 'post_detail' post.pk %}">
+        <div class="grid-item bordered">
+            <p class="date">28 июня 2019 18:34</p>
+            <img class="hero-image" src="{% static 'images/1Statya_2.svg' %}">
+            <h3>{{ post.title }}</h3>
+        </div>
+</div>
+</a>
 {% endif %}
 
 {% endfor %}
