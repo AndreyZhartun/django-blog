@@ -1,0 +1,48 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% for post in object_list reversed %}
+{% if forloop.first %}
+<div class="container">
+    <div class="row hero">
+        <!-- push-m12 to the right-->
+        <div class="col m12 push-m12 l7">
+            <span>NEW</span>
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.body }}</p>
+            <a class="btn-large" href="{% url 'post_detail' post.pk %}">Читать</a>
+        </div>
+        <div class="col m12 l5">
+            <img src="{% static 'images/1Statya_3.svg' %}">
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+<div class="container">
+    <h2 class="padded-left">Другие статьи</h2>
+    <div class="row">
+        {% elif forloop.last %}
+        <a href="{% url 'post_detail' post.pk %}">
+            <div class="col m12 l4 grid-item">
+                <p class="date">28 июня 2019 18:34</p>
+                <img class="hero-image" src="{% static 'images/1Statya_2.svg' %}">
+                <h3>{{ post.title }}</h3>
+            </div>
+        </a>
+    </div>
+</div>
+{% else %}
+<a href="{% url 'post_detail' post.pk %}">
+    <div class="col m12 l4 grid-item">
+        <p class="date">28 июня 2019 18:34</p>
+        <img class="hero-image" src="{% static 'images/1Statya_2.svg' %}">
+        <h3>{{ post.title }}</h3>
+    </div>
+</a>
+
+{% endif %}
+
+{% endfor %}
+{% endblock content %}

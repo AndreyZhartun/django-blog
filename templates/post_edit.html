@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="padded-left">Добавить статью</h1>
+    <div class="row">
+        <form method="POST" class="post-form">{% csrf_token %}
+            <div class="row">
+                <div class="col l8">
+                    <!-- form.as_p -->
+                    <input id="id_title" type="text" name="title" maxlength="100" placeholder="Введите название статьи"
+                        required>
+                </div>
+                <div class="col l4">
+                    <!-- pull? -->
+                    <div class="right-col">
+                        <button type="submit" class="btn publish-button">Опубликовать</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l8">
+                    <input type="text" name="body" id="id_body" required>
+                </div>
+                <div class="col l4">
+                    <div class="right-col">
+                        <div class="grid-item">
+                            <h3>Загрузить изображение</h3>
+                            <p class="center-align">
+                                <button type="submit" class="btn-large load-button">Файл</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock %}
