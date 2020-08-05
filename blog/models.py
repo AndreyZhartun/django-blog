@@ -7,7 +7,6 @@ class Post(models.Model):
     body = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     image = models.ImageField(upload_to='images', blank=True)
-    # TODO images
 
     def __str__(self):
         return self.title
