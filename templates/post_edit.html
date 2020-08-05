@@ -28,11 +28,14 @@
                             <h3>Загрузить изображение</h3>
                             <p class="center-align">
                                 <input type="file" name="image" id="id_file">
-                                <label for="id_file">
+                                <label for="id_file" id="id_file_label">
                                     <a class="btn-large load-button">Файл</a>
                                 </label>
                             </p>
-
+                            <div class="preview">
+                                <a id="id_clear" class="btn-floating" hidden><i class="material-icons">clear</i></a>
+                                <img id="id_preview" class="">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -41,4 +44,24 @@
         </form>
     </div>
 </div>
+<script>
+    //показ превью через File API
+    document.getElementById("id_file").onchange = function () {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            document.getElementById("id_clear").style.display = "block";
+            document.getElementById("id_preview").src = e.target.result;
+            document.getElementById("id_file_label").hidden = true;
+        };
+
+        reader.readAsDataURL(this.files[0]);
+    };
+    document.getElementById("id_clear").onclick = function () {
+        document.getElementById("id_preview").src = "";
+        document.getElementById("id_file").value = "";
+        document.getElementById("id_file_label").hidden = false;
+        document.getElementById("id_clear").style.display = "none";
+    }
+</script>
 {% endblock %}

@@ -38,7 +38,7 @@ a {
 }
 
 .btn:hover, .btn-large:hover, .btn:focus, .btn-large:focus {
-    background: rgba(49, 90, 242, 0.75) !important;
+    background: rgba(49, 90, 242, 0.75);
 }
 
 ::selection, ::-moz-selection {
@@ -61,14 +61,14 @@ nav a {
     color: #010101;
 }
 
-nav .btn {
+nav ul a.btn {
     background-color: #315AF2;
     font-size: 16px;
     /*line-height: 19px;*/
     color: #FFFFFF;
     text-transform: none;
     border-radius: 6px;
-    margin-right: 0px !important;
+    margin-right: 0px;
 }
 
 /* headers */
@@ -153,6 +153,10 @@ h3 {
     color: #FFFFFF;
 }
 
+.hero .btn-large:hover, .hero .btn-large:focus {
+    background: rgba(49, 90, 242, 0.75);
+}
+
 /* grid */
 
 .bordered {
@@ -167,8 +171,8 @@ h3 {
 
 /* нужно 12 колонн = 3х + 2у, целых х и у не найти */
 
-.padded {
-    padding: .75rem .75rem !important;
+.grid .padded {
+    padding: .75rem .75rem;
 }
 
 /*.grid .col.l4 {
@@ -190,6 +194,8 @@ h3 {
 .grid-item img {
     display: block;
     margin: 0 auto;
+    /*width: 100%;*/
+    height: 40%;
 }
 
 .grid-item h3 {
@@ -216,6 +222,7 @@ h3 {
 .gray {
     background: #E5E5E5;
     padding-bottom: 5rem;
+    flex-grow: 1;
 }
 
 .gray p, .gray h2 {
@@ -226,21 +233,36 @@ h3 {
     width: 100%;
 }
 
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body>* {
+    flex-shrink: 0;
+}
+
 /* post_edit.html */
 
 #id_title, #id_body {
-    border: 2px solid #CDCDCD !important;
-    border-radius: 3px !important;
-    padding-left: 1rem !important;
+    border: 2px solid #CDCDCD;
+    /* !important;*/
+    border-radius: 3px;
+    /* !important;*/
+    padding-left: 1rem;
+    /* !important;*/
     min-height: 48px;
     resize: none;
-    box-sizing: border-box !important;
+    box-sizing: border-box;
+    /* !important;*/
 }
 
 #id_title {
     color: #315AF2;
     font-family: CirceRounded;
-    font-size: 24px !important;
+    font-size: 24px;
+    /* !important;*/
     letter-spacing: -0.416667px;
 }
 
@@ -258,7 +280,8 @@ input::placeholder {
 
 textarea {
     height: 100%;
-    padding: 1rem !important;
+    padding: 1rem;
+    /* !important;*/
 }
 
 .publish-button {
@@ -268,10 +291,10 @@ textarea {
     /*margin-left: 1rem;*/
 }
 
-/* в figma не было, но по аналогии с синей кнопкой */
+/* по аналогии с синей кнопкой */
 
-.publish-button:hover, .publish-button:focus {
-    background-color: rgba(233, 57, 156, 0.75);
+form .btn:hover, form .btn:focus {
+    background: rgba(233, 57, 156, 0.75);
 }
 
 .right-col {
@@ -295,4 +318,26 @@ textarea {
     overflow: hidden;
     position: absolute;
     z-index: -1;
+}
+
+.preview {
+    position: relative;
+    width: 90%;
+    /*display: block;*/
+    margin: 0 auto;
+}
+
+#id_preview {
+    width: 100%;
+    /*display: block;*/
+    margin-bottom: 1rem;
+    height: auto;
+}
+
+#id_clear {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    display: none;
+    /*transform: translate(-10%, -5%);*/
 }
