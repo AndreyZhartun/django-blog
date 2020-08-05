@@ -16,7 +16,7 @@
         </div>
         <div class="col s12 m12 l5">
             {% if post.image %}
-            <img src={{ post.image.url }}>
+            <img src={{ post.image.url }} alt={{ post.title }}>
             {% else %}
             <img src="{% static 'images/1Statya_3.svg' %}">
             {% endif %}
@@ -33,7 +33,7 @@
                 <div class="grid-item bordered">
                     <p class="date">{{ post.created_date|date:'d F Y H:i' }}</p>
                     {% if post.image %}
-                    <img src={{ post.image.url }}>
+                    <img src={{ post.image.url }} alt={{ post.title }}>
                     {% else %}
                     <img src="{% static 'images/1Statya_2.svg' %}">
                     {% endif %}
