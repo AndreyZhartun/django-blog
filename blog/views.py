@@ -5,6 +5,14 @@ from django.utils import timezone
 from .models import Post
 from .forms import PostForm
 from django.shortcuts import redirect
+from itertools import repeat
+
+def post_list(request):
+    posts = Post.objects.filter(created_date__lte=timezone.now()).order_by('created_date').reverse()
+    if len(posts) > 10:
+        posts = posts[:10]
+        #posts = list(posts) + list(repeat(0, 6))#+ [[0] for repeat(0, 10 - len(posts))]
+    return render(request, 'home.html', {'object_list': posts})
 
 class BlogListView(ListView):
     model = Post

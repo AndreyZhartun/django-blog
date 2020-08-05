@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-{% for post in object_list reversed %}
+{% for post in object_list %}
 {% if forloop.first %}
 <div class="container">
     <div class="row hero">
@@ -15,7 +15,11 @@
             <a class="btn-large" href="{% url 'post_detail' post.pk %}">Читать</a>
         </div>
         <div class="col s12 m12 l5">
+            {% if post.image %}
+            <img src={{ post.image.url }}>
+            {% else %}
             <img src="{% static 'images/1Statya_3.svg' %}">
+            {% endif %}
         </div>
     </div>
 </div>
@@ -28,7 +32,11 @@
             <a href="{% url 'post_detail' post.pk %}">
                 <div class="grid-item bordered">
                     <p class="date">{{ post.created_date|date:'d F Y H:i' }}</p>
+                    {% if post.image %}
+                    <img src={{ post.image.url }}>
+                    {% else %}
                     <img src="{% static 'images/1Statya_2.svg' %}">
+                    {% endif %}
                     <h3>{{ post.title }}</h3>
                 </div>
             </a>
@@ -38,6 +46,9 @@
     </div>
 </div>
 {%endif %}
-
+{% empty %}
+<div class="container">
+    <h1>Записей нет!</h1>
+</div>
 {% endfor %}
 {% endblock content %}
