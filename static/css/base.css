@@ -38,7 +38,7 @@ a {
 }
 
 .btn:hover, .btn-large:hover, .btn:focus, .btn-large:focus {
-    background: rgba(49, 90, 242, 0.75);
+    background: rgba(49, 90, 242, 0.75) !important;
 }
 
 ::selection, ::-moz-selection {
@@ -222,9 +222,13 @@ h3 {
     word-wrap: anywhere;
 }
 
+.gray img {
+    width: 100%;
+}
+
 /* post_edit.html */
 
-input, textarea {
+#id_title, #id_body {
     border: 2px solid #CDCDCD !important;
     border-radius: 3px !important;
     padding-left: 1rem !important;
@@ -233,7 +237,7 @@ input, textarea {
     box-sizing: border-box !important;
 }
 
-input {
+#id_title {
     color: #315AF2;
     font-family: CirceRounded;
     font-size: 24px !important;
@@ -282,4 +286,13 @@ textarea {
 .load-button {
     font-family: MuseoCyrl;
     background: #315AF2;
+}
+
+#id_file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
 }

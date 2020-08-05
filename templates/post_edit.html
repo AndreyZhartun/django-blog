@@ -4,7 +4,7 @@
 <div class="container">
     <h1 class="padded-left">Добавить статью</h1>
     <div class="row">
-        <form method="POST" class="post-form">{% csrf_token %}
+        <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
             <div class="row">
                 <div class="col l8">
                     <!-- form.as_p -->
@@ -27,8 +27,12 @@
                         <div class="bordered">
                             <h3>Загрузить изображение</h3>
                             <p class="center-align">
-                                <button type="submit" class="btn-large load-button">Файл</button>
+                                <input type="file" name="image" id="id_file">
+                                <label for="id_file">
+                                    <a class="btn-large load-button">Файл</a>
+                                </label>
                             </p>
+
                         </div>
                     </div>
                 </div>

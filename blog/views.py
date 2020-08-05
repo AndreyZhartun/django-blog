@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
- 
+from django.utils import timezone
+
 from .models import Post
 from .forms import PostForm
 from django.shortcuts import redirect
@@ -15,12 +16,9 @@ class BlogDetailView(DetailView):
 
 def post_new(request):
     if request.method == "POST":
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
-            post = form.save(commit=False)
-            #post.author = request.user
-            #post.published_date = timezone.now()
-            post.save()
+            post = form.save()
             return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm()
