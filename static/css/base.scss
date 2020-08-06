@@ -72,6 +72,9 @@ nav,
 }
 
 nav {
+    .img-wrap {
+        height: 100%;
+    }
     img {
         margin-top: 1rem;
     }
@@ -100,9 +103,6 @@ h2,
 h3 {
     font-style: normal;
     font-weight: bold;
-    /*display: flex;
-    align-items: center;
-    letter-spacing: -0.416667px;*/
     color: $primary_blue;
 }
 
@@ -137,8 +137,6 @@ h3 {
         /*line-height: 20px;*/
         /* identical to box height, or 125% */
         display: flex;
-        /*align-items: center;
-        letter-spacing: -0.416667px;*/
         color: $primary_pink;
     }
 
@@ -146,23 +144,26 @@ h3 {
         margin-top: 0;
         /* сокращение до 4 строк для очень больших заголовков */
         @include wrap-overflow(4);
-        /*display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-        overflow: hidden;*/
     }
 
     p {
         @include wrap-overflow(4);
-        /*display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-        overflow: hidden;*/
+    }
+
+    .hero-image-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
     }
 
     img {
         padding-top: $standard-padding;
         width: 100%;
+        height: auto;
+        margin: auto;
+        /*transform: translateY(5%);
+        padding-bottom: 5%;*/
     }
 
     .btn-large {
@@ -174,8 +175,6 @@ h3 {
         font-weight: bold;
         font-size: 32px;
         /*line-height: 38px;*/
-        /*display: flex;*/
-        /*align-items: center;*/
         letter-spacing: -0.416667px;
         color: white;
     }
@@ -301,9 +300,19 @@ form .btn:focus {
     background: $hover_pink;
 }
 
-.right-col {
-    padding-left: $standard-padding;
+/* Поле загрузки файла под текстовыми полями на моб. */
+@media only screen and (max-width: 600px) {
+    .right-col {
+        padding-top: $standard-padding;
+    }
+}
+@media only screen and (min-width: 601px) {
+    .right-col {
+        padding-left: $standard-padding;
+    }
+}
 
+.bordered {
     h3 {
         margin: 1rem 1rem;
         text-align: center;

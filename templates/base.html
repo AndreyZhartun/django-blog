@@ -15,14 +15,18 @@
         <nav>
             <div class="nav-wrapper container">
                 <div class="row">
-                    <div class="col s2">
-                        <img class="brand-logo" src="{% static 'images/Logo_Kodland.svg' %}">
+                    <div class="col s12 m6 l2 img-wrap">
+                        <a href="{% url 'home' %}">
+                            <img class="brand-logo" src="{% static 'images/Logo_Kodland.svg' %}">
+                        </a>
                     </div>
-                    <div class="col s2">
-                        <a class="left-links" href="{% url 'home' %}">Блог</a>
+                    <div class="col s6 m12 l2 hide-on-med-and-down">
+                        <a href="{% url 'home' %}">
+                            Блог
+                        </a>
                     </div>
-                    <div class="col s4 offset-s4">
-                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <div class="col m6 l4 offset-l3 hide-on-small-and-down">
+                        <ul id="nav-mobile" class="right">
                             <li><a class="btn" href="{% url 'post_new' %}">+ Добавить статью</a></li>
                         </ul>
                     </div>

@@ -6,19 +6,20 @@
 {% if forloop.first %}
 <div class="container">
     <div class="row hero">
-        <!-- TODO может быть на моб. изображение сверху названия -->
         <div class="col s12 m12 l7">
             <span>NEW</span>
             <h1>{{ post.title }}</h1>
             <p>{{ post.body }}</p>
             <a class="btn-large" href="{% url 'post_detail' post.pk %}">Читать</a>
         </div>
-        <div class="col s12 m12 l5">
-            {% if post.image %}
-            <img src={{ post.image.url }} alt={{ post.title }}>
-            {% else %}
-            <img src="{% static 'images/1Statya_3.svg' %}">
-            {% endif %}
+        <div class="col s12 m12 l5 hero-image-div">
+            <div class="hero-image-div hide-on-med-and-down">
+                {% if post.image %}
+                <img src={{ post.image.url }} alt={{ post.title }}>
+                {% else %}
+                <img src="{% static 'images/1Statya_3.svg' %}">
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>
@@ -29,7 +30,7 @@
         {% else %}
         <div class="col s12 m12 l4 padded">
             <a href="{% url 'post_detail' post.pk %}">
-                <div class="grid-item bordered">
+                <div class="grid-item bordered hoverable">
                     <span class="date">{{ post.created_date|date:'d F Y H:i' }}</span>
                     {% if post.image %}
                     <img src={{ post.image.url }} alt={{ post.title }}>

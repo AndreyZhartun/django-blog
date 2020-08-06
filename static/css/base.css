@@ -54,6 +54,9 @@ nav,
   background-color: white;
 }
 
+nav .img-wrap {
+  height: 100%;
+}
 nav img {
   margin-top: 1rem;
 }
@@ -78,9 +81,6 @@ h2,
 h3 {
   font-style: normal;
   font-weight: bold;
-  /*display: flex;
-  align-items: center;
-  letter-spacing: -0.416667px;*/
   color: #315af2;
 }
 
@@ -113,8 +113,6 @@ h3 {
   /*line-height: 20px;*/
   /* identical to box height, or 125% */
   display: flex;
-  /*align-items: center;
-  letter-spacing: -0.416667px;*/
   color: #e9399c;
 }
 .hero h1 {
@@ -125,10 +123,6 @@ h3 {
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  /*display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;*/
 }
 .hero p {
   word-wrap: anywhere;
@@ -136,14 +130,20 @@ h3 {
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  /*display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;*/
+}
+.hero .hero-image-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 .hero img {
   padding-top: 0.75rem;
   width: 100%;
+  height: auto;
+  margin: auto;
+  /*transform: translateY(5%);
+  padding-bottom: 5%;*/
 }
 .hero .btn-large {
   background: #315af2;
@@ -154,8 +154,6 @@ h3 {
   font-weight: bold;
   font-size: 32px;
   /*line-height: 38px;*/
-  /*display: flex;*/
-  /*align-items: center;*/
   letter-spacing: -0.416667px;
   color: white;
 }
@@ -274,18 +272,25 @@ form .btn:focus {
   background: rgba(233, 57, 156, 0.75);
 }
 
-.right-col {
-  padding-left: 0.75rem;
+@media only screen and (max-width: 600px) {
+  .right-col {
+    padding-top: 0.75rem;
+  }
 }
-.right-col h3 {
+@media only screen and (min-width: 601px) {
+  .right-col {
+    padding-left: 0.75rem;
+  }
+}
+.bordered h3 {
   margin: 1rem 1rem;
   text-align: center;
 }
-.right-col .load-button {
+.bordered .load-button {
   font-family: MuseoCyrl;
   background: #315af2;
 }
-.right-col #id_file {
+.bordered #id_file {
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
