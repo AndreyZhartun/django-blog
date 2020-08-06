@@ -6,7 +6,7 @@
 {% if forloop.first %}
 <div class="container">
     <div class="row hero">
-        <!-- TODO maybe pull image left on mobile -->
+        <!-- TODO может быть на моб. изображение сверху названия -->
         <div class="col s12 m12 l7">
             <span>NEW</span>
             <h1>{{ post.title }}</h1>
@@ -30,7 +30,7 @@
         <div class="col s12 m12 l4 padded">
             <a href="{% url 'post_detail' post.pk %}">
                 <div class="grid-item bordered">
-                    <p class="date">{{ post.created_date|date:'d F Y H:i' }}</p>
+                    <span class="date">{{ post.created_date|date:'d F Y H:i' }}</span>
                     {% if post.image %}
                     <img src={{ post.image.url }} alt={{ post.title }}>
                     {% else %}
