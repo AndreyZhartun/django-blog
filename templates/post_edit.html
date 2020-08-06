@@ -8,12 +8,10 @@
         <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
             <div class="row">
                 <div class="col s12 m8 l8 ">
-                    <!-- form.as_p -->
                     <input id="id_title" type="text" name="title" maxlength="100" placeholder="Введите название статьи"
                         required>
                 </div>
                 <div class="col s12 m4 l4 hide-on-small-only">
-                    <!-- pull? -->
                     <div class="right-col">
                         <button type="submit" class="btn publish-button">Опубликовать</button>
                     </div>
@@ -41,9 +39,9 @@
                     </div>
                 </div>
             </div>
+            <!-- Кнопка Отправить внизу для моб. устройств -->
             <div class="row">
                 <div class="col s12 hide-on-med-and-up">
-                    <!-- pull? -->
                     <div>
                         <button type="submit" class="btn publish-button">Опубликовать</button>
                     </div>

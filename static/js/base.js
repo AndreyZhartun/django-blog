@@ -12,11 +12,11 @@ document.getElementById("id_file").onchange = function () {
 
     reader.readAsDataURL(this.files[0]);
 };
+// resetнуть выбранное изображение
 document.getElementById("id_clear").onclick = function () {
     var image = document.getElementById("id_preview");
     image.src = "";
     image.classList.remove("bordered");
-    //document.getElementById("id_preview").src = "";
     document.getElementById("id_file").value = "";
     document.getElementById("id_file_label").hidden = false;
     document.getElementById("id_clear").style.display = "none";

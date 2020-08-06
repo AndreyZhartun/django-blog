@@ -5,12 +5,8 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
 # изменил и перенес ключ в heroku env
-SECRET_KEY = 'a-s9difupasdf8asudfas98fhaps8apuf'#os.getenv('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # для подачи файлов без другого сервера, для тестового задания пойдет
 DEBUG = True

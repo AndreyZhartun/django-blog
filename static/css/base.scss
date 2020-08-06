@@ -142,7 +142,6 @@ h3 {
 
     h1 {
         margin-top: 0;
-        /* сокращение до 4 строк для очень больших заголовков */
         @include wrap-overflow(4);
     }
 
@@ -162,8 +161,6 @@ h3 {
         width: 100%;
         height: auto;
         margin: auto;
-        /*transform: translateY(5%);
-        padding-bottom: 5%;*/
     }
 
     .btn-large {
@@ -240,7 +237,7 @@ h3 {
     }
 }
 
-/* растяжение gray на всю высоту */
+/* для растяжения gray на всю высоту */
 
 html,
 body {
@@ -332,6 +329,7 @@ form .btn:focus {
         z-index: -1;
     }
 }
+/* превью изображения с кнопкой reset */
 .preview {
     position: relative;
     width: 90%;
