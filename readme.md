@@ -1,5 +1,5 @@
 ## Мини-блог на Django+Materialize 
-https://az-kodtest.herokuapp.com/
+-> https://az-kodtest.herokuapp.com/
 
 ### Стек
 - Python3
@@ -9,6 +9,6 @@ https://az-kodtest.herokuapp.com/
 - Materialize 
 
 ### Страницы сайта
-- Главная /
-- Добавление поста /post/new/
-- Просмотр поста /post/id/
+- Главная, последний пост сверху и до 9 свежайших в сетке -> /
+- Добавление поста, ограничений для добавления нет -> /post/new/
+- Просмотр поста, клик по карте или на Читать для верхнего поста /post/id/
