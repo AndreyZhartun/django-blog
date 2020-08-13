@@ -1,4 +1,5 @@
-## Тестовое задание для kodland
+## Мини-блог на Django+Materialize 
+### с неограниченным доступом к созданию постов
 
 https://az-kodtest.herokuapp.com/
 
